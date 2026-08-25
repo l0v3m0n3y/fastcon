@@ -54,16 +54,16 @@ public class Fastcon{
         return try JSONSerialization.jsonObject(with: data)
     }
     
-    public func get_telegram_proxy_list() async throws -> Any {
+    public func getTelegramProxyList() async throws -> Any {
         return try await fetchJSON(from: "\(api)/proxies")
     }
 
-    public func ping_server(serverId: String) async throws -> Any {
+    public func pingServer(serverId: String) async throws -> Any {
         // if telegram proxy - id, if servers - host
         return try await fetchJSON(from: "\(api)/proxy-ping/\(serverId)")
     }
 
-    public func get_servers_list(password: String = "0402036") async throws -> Any {
+    public func getServersList(password: String = "0402036") async throws -> Any {
         return try await fetchJSON(from: "\(api)/admin/servers?password=\(password)")
     }
 }
