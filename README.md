@@ -8,7 +8,7 @@ import fastcon
 let client = Fastcon()
 
 do {
-    if let data = try await client.get_telegram_proxy_list() as? [[String: Any]] {
+    if let data = try await client.getTelegramProxyList() as? [[String: Any]] {
         for proxy in data {
             let server = proxy["server"] as? String ?? ""
             let port = proxy["port"] as? Int ?? 0
